@@ -1,0 +1,19 @@
+{
+  "name": "amazingmovies",
+  "version": "1.0.0",
+  "description": "It's just a project where I consume an existing API.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/F-Dupraz/AmazingMovies.git"
+  },
+  "author": "Fabricio Angel Dupraz <duprazfabricio@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/F-Dupraz/AmazingMovies/issues"
+  },
+  "homepage": "https://github.com/F-Dupraz/AmazingMovies#readme"
+}

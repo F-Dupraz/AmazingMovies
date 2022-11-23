@@ -52,6 +52,12 @@ async function getTrendingMoviesPreview() {
   moviesGenerator(movies, trendingMoviesPreviewList);
 }
 
+async function getTrending() {
+  const { data } = await api('/trending/all/day');
+  const movies = data.results;
+  moviesGenerator(movies, genericSection);
+}
+
 async function getCategoriesPreview() {
   const { data } = await api('/genre/movie/list');
   const categories = data.genres;

@@ -1,5 +1,5 @@
 searchFormBtn.addEventListener('click', () => {
-  location.hash = '#search=';
+  location.hash = `#search=${searchFormInput.value.trim()}`;
 });
 
 trendingBtn.addEventListener('click', () => {
@@ -7,7 +7,7 @@ trendingBtn.addEventListener('click', () => {
 });
 
 arrowBtn.addEventListener('click', () => {
-  location.hash = '';
+  location.hash = window.history.back();
 });
 
 window.addEventListener('DOMContentLoaded', navigator, false);
@@ -34,10 +34,13 @@ function navigator() {
       homePage();
       break;
   }
+
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
 }
 
 const homePage = () => {
-  console.log("1 Estamos en: ", location.hash);
+  // console.log("1 Estamos en: ", location.hash);
 
   getTrendingMoviesPreview();
   getCategoriesPreview();
@@ -81,13 +84,16 @@ const searchPage = () => {
   arrowBtn.classList.remove('inactive');
   arrowBtn.classList.remove('header-arrow--white');
   headerTitle.classList.add('inactive');
-  headerCategoryTitle.classList.remove('inactive');
+  headerCategoryTitle.classList.add('inactive');
   searchForm.classList.remove('inactive');
 
   trendingPreviewSection.classList.add('inactive');
   categoriesPreviewSection.classList.add('inactive');
   genericSection.classList.remove('inactive');
   movieDetailSection.classList.add('inactive');
+
+  const [ _search, query ] = location.hash.split('=');
+  getMoviesBySearchQuery(query);
 }
 
 const movieDetailsPage = () => {
@@ -122,4 +128,14 @@ const categoryPage = () => {
   categoriesPreviewSection.classList.add('inactive');
   genericSection.classList.remove('inactive');
   movieDetailSection.classList.add('inactive');
+
+  const [ _category, categoryData ] = location.hash.split('=');
+  const [ categoryId, categoryName ] = categoryData.split('_');
+  const [ categoryTitle1, categoryTitle2 ] = categoryName.split('%20');
+  if(categoryTitle2) {
+    headerCategoryTitle.innerHTML = `${categoryTitle1} ${categoryTitle2}`;
+  } else {
+    headerCategoryTitle.innerHTML = `${categoryTitle1}`;
+  }
+  getMoviesByCategory(categoryId);
 }

@@ -34,7 +34,7 @@ function navigator() {
 }
 
 function homePage() {
-  console.log('Home!!');
+  // console.log('Home!!');
 
   headerSection.classList.remove('header-container--long');
   headerSection.style.background = '';
@@ -54,7 +54,7 @@ function homePage() {
 }
 
 function categoriesPage() {
-  console.log('categories!!');
+  // console.log('categories!!');
 
   headerSection.classList.remove('header-container--long');
   headerSection.style.background = '';
@@ -79,7 +79,7 @@ function categoriesPage() {
 }
 
 function movieDetailsPage() {
-  console.log('Movie!!');
+  // console.log('Movie!!');
 
   headerSection.classList.add('header-container--long');
   // headerSection.style.background = '';
@@ -100,7 +100,7 @@ function movieDetailsPage() {
 }
 
 function searchPage() {
-  console.log('Search!!');
+  // console.log('Search!!');
 
   headerSection.classList.remove('header-container--long');
   headerSection.style.background = '';
@@ -121,7 +121,7 @@ function searchPage() {
 }
 
 function trendsPage() {
-  console.log('TRENDS!!');
+  // console.log('TRENDS!!');
 
   headerSection.classList.remove('header-container--long');
   headerSection.style.background = '';
